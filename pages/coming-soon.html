@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -56,7 +59,12 @@
         </div>
 
         <div class="z-10 text-center space-y-12 max-w-4xl">
-            <a href="../index.html" class="font-newsreader text-4xl font-bold tracking-tight block mb-20">Inkwell Studio</a>
+            <a href="../index.html" class="flex items-center justify-center transition-opacity hover:opacity-80 mb-20">
+                <div class="relative flex items-center justify-center mr-3">
+                    <img src="../assets/images/logo-icon.svg" alt="Inkwell Studio Logo Icon" class="w-12 h-12">
+                </div>
+                <span class="font-newsreader text-4xl font-bold tracking-tight">Inkwell Studio</span>
+            </a>
             
             <div class="space-y-6">
                 <span class="text-secondary font-bold uppercase tracking-[0.2em] text-xs">Exhibition Pre-Release</span>
@@ -97,15 +105,20 @@
     <script src="../assets/js/main.js"></script>
     <!-- ========== FOOTER ========== -->
     <!-- ========== FOOTER ========== -->
-    <footer class="bg-surface pt-16 pb-12 border-t border-outline-variant mt-auto">
+    <footer class="bg-surface pt-12 pb-8 md:pt-16 md:pb-10 border-t border-outline-variant">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-16 lg:gap-24 mb-16">
+            <div class="grid md:grid-cols-4 gap-8 md:gap-12 lg:gap-24 mb-6 md:mb-8">
                 <!-- Brand -->
-                <div class="space-y-6">
-                    <a href="../index.html" class="font-newsreader text-2xl font-bold tracking-tight">Inkwell Studio</a>
+                <div class="space-y-4 md:space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
+                    <a href="../index.html" class="flex items-center transition-opacity hover:opacity-80">
+                        <div class="relative flex items-center justify-center mr-2">
+                            <img src="../assets/images/logo-icon.svg" alt="Inkwell Studio Logo Icon" class="w-8 h-8">
+                        </div>
+                        <span class="font-newsreader text-2xl font-bold tracking-tight">Inkwell Studio</span>
+                    </a>
                     <p
                         class="text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface-variant leading-relaxed opacity-70">
-                        Editorial Tattooing & <br> Narrative Illustration.
+                        Editorial Tattooing & <br class="hidden md:block"> Narrative Illustration.
                     </p>
                     <div class="flex space-x-5">
                         <a href="#" class="text-on-surface-variant hover:text-secondary transition-colors"
@@ -124,36 +137,36 @@
                 </div>
 
                 <!-- Exhibition -->
-                <div class="space-y-6">
+                <div class="space-y-4 md:space-y-6">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">Exhibition</h4>
                     <ul class="space-y-3 text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">
-                        <li><a href="portfolio.html" class="hover:text-secondary transition-colors">The Portfolio</a></li>
-                        <li><a href="about.html" class="hover:text-secondary transition-colors">Our Story</a></li>
-                        <li><a href="aftercare.html" class="hover:text-secondary transition-colors">Preservation</a></li>
+                        <li><a href="../index.html" class="hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="portfolio.html" class="hover:text-secondary transition-colors">Portfolio</a></li>
+                        <li><a href="services.html" class="hover:text-secondary transition-colors">Services</a></li>
+                        <li><a href="about.html" class="hover:text-secondary transition-colors">About Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Access -->
-                <div class="space-y-6">
+                <div class="space-y-4 md:space-y-6">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">Access</h4>
                     <ul class="space-y-3 text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">
-                        <li><a href="consultation.html" class="hover:text-secondary transition-colors">Consultation</a></li>
-                        <li><a href="login.html" class="hover:text-secondary transition-colors">Client Workspace</a></li>
-                        <li><a href="contact.html" class="hover:text-secondary transition-colors">Contact</a></li>
+                        <li><a href="consultation.html" class="hover:text-secondary transition-colors">Book Session</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Ledger -->
-                <div class="space-y-6">
+                <div class="space-y-4 md:space-y-6 flex flex-col items-center md:items-start">
                     <h4 class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">The Digital Ledger</h4>
-                    <div class="space-y-4">
-                        <p class="text-[10px] text-on-surface-variant opacity-50 uppercase tracking-widest leading-relaxed">Enroll for private <br> exhibition updates.</p>
-                        <form class="relative group">
+                    <div class="space-y-4 w-full flex flex-col items-center md:items-start">
+                        <p class="text-[10px] text-on-surface-variant opacity-50 uppercase tracking-widest leading-relaxed text-center md:text-left">Enroll for private exhibition updates.</p>
+                        <form class="relative group flex w-full max-w-[280px]">
                             <input type="email" placeholder="EMAIL ADDRESS"
-                                class="w-full bg-transparent border-b border-outline-variant focus:border-secondary transition-colors outline-none py-3 text-[10px] font-bold tracking-widest placeholder:opacity-30">
+                                class="flex-1 bg-surface-container border border-outline-variant focus:border-secondary transition-all outline-none py-2 px-4 text-[10px] font-bold tracking-widest text-on-surface placeholder:text-on-surface-variant/60">
                             <button type="submit"
-                                class="absolute right-0 bottom-3 text-[10px] font-bold uppercase tracking-[0.2em] text-secondary hover:translate-x-1 transition-transform">
-                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                class="bg-secondary text-white px-5 py-2 text-[9px] font-bold uppercase tracking-[0.2em] hover:brightness-110 transition-all btn-sheen whitespace-nowrap">
+                                Join
                             </button>
                         </form>
                     </div>
@@ -161,7 +174,7 @@
             </div>
 
             <div
-                class="pt-8 border-t border-outline-variant/30 flex justify-between items-center text-[9px] font-bold uppercase tracking-[0.3em] text-on-surface-variant opacity-50">
+                class="pt-6 md:pt-8 border-t border-outline-variant/30 flex justify-between items-center text-[9px] font-bold uppercase tracking-[0.3em] text-on-surface-variant opacity-50">
                 <p>© 2024 Inkwell Studio London</p>
                 <p>Digital Excellence</p>
             </div>

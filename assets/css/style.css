@@ -157,38 +157,70 @@ h1, h2, h3, h4, h5, h6, .editorial {
 }
 
 /* Transparent Nav Overrides (Theme-Aware) */
-#main-nav.nav-transparent:not(.scrolled) a,
-#main-nav.nav-transparent:not(.scrolled) button:not(.bg-secondary),
+#main-nav.nav-transparent:not(.scrolled) a:not(.text-secondary):not(.bg-secondary),
+#main-nav.nav-transparent:not(.scrolled) button:not(.text-secondary):not(.bg-secondary),
 #main-nav.nav-transparent:not(.scrolled) .font-newsreader {
-  /* Default: Theme-aware color */
-  color: var(--on-surface-variant) !important;
-  opacity: 0.8;
-}
-
-/* Hard-Override for Immersive Dark Heroes (like Index-2 and Portfolio) */
-#main-nav.nav-transparent:not(.scrolled).nav-dark-hero a,
-#main-nav.nav-transparent:not(.scrolled).nav-dark-hero button:not(.bg-secondary),
-#main-nav.nav-transparent:not(.scrolled).nav-dark-hero .font-newsreader {
-  color: rgba(255, 255, 255, 0.9) !important;
+  /* High Contrast: Theme-aware black/white with full opacity */
+  color: var(--on-surface) !important;
   opacity: 1;
 }
 
-.dark #main-nav.nav-transparent:not(.scrolled) a,
-.dark #main-nav.nav-transparent:not(.scrolled) button:not(.bg-secondary),
-.dark #main-nav.nav-transparent:not(.scrolled) .font-newsreader {
-  color: rgba(255, 255, 255, 0.8) !important;
+/* Hard-Override for Immersive Dark Heroes (like Index-2 and Portfolio) */
+/* Target only top-level items to avoid breaking dropdown contrast */
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero > div > a:not(.bg-secondary):not(.text-secondary),
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero > div > div > a:not(.bg-secondary):not(.text-secondary),
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero > div > div > button:not(.bg-secondary):not(.text-secondary),
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero > div > div > div > a:not(.bg-secondary):not(.text-secondary), /* Dropdown Parent */
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero > div > div > div > button:not(.bg-secondary):not(.text-secondary),
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero .font-newsreader,
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero svg:not(.bg-secondary *):not([class*="absolute"] *) {
+  color: #ffffff !important;
+  stroke: #ffffff;
+  opacity: 1;
+}
+
+/* Ensure dropdowns inside dark-hero transitions stay theme-aware */
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero [class*="absolute"] a,
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero [class*="absolute"] button,
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero [class*="absolute"] span {
+  color: var(--on-surface) !important;
+  stroke: var(--on-surface) !important;
+}
+
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero [class*="absolute"] a.text-secondary {
+  color: var(--secondary) !important;
+}
+
+/* Allow hover states to work even in forced white mode, BUT exclude primary CTA buttons */
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero a:not(.bg-secondary):hover,
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero button:not(.bg-secondary):hover {
+  color: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+}
+
+#main-nav.nav-transparent:not(.scrolled).nav-dark-hero .border-outline-variant {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.dark #main-nav.nav-transparent:not(.scrolled) a:not(.text-secondary):not(.bg-secondary),
+.dark #main-nav.nav-transparent:not(.scrolled) button:not(.text-secondary):not(.bg-secondary),
+.dark #main-nav.nav-transparent:not(.scrolled) .font-newsreader:not(.text-secondary) {
+  color: #ffffff !important;
+  opacity: 1;
 }
 
 #main-nav.nav-transparent:not(.scrolled) .font-newsreader {
   color: var(--on-surface) !important;
+  opacity: 1;
 }
 
-.dark #main-nav.nav-transparent:not(.scrolled) .font-newsreader {
+.dark #main-nav.nav-transparent:not(.scrolled) .font-newsreader:not(.text-secondary) {
   color: #ffffff !important;
+  opacity: 1;
 }
 
 /* Ensure dropdown links inside transparent nav remain legible */
-#main-nav.nav-transparent:not(.scrolled) .group-hover\:visible a {
+#main-nav.nav-transparent:not(.scrolled) .group-hover\:visible a:not(.text-secondary) {
   color: var(--on-surface-variant) !important;
 }
 
@@ -317,7 +349,7 @@ h1, h2, h3, h4, h5, h6, .editorial {
   /* Default LTR (Right-anchored) */
   right: 0 !important;
   left: auto !important;
-  transform: translateX(101%);
+  transform: translateX(101%) !important;
   border-left: 1px solid rgba(var(--outline-variant-rgb), 0.2);
   border-right: none;
 }
@@ -330,13 +362,20 @@ h1, h2, h3, h4, h5, h6, .editorial {
 [dir="rtl"] #mobile-menu {
   right: auto !important;
   left: 0 !important;
-  transform: translateX(-101%);
-  border-left: none;
-  border-right: 1px solid rgba(var(--outline-variant-rgb), 0.2);
+  transform: translateX(-101%) !important;
+  border-left: none !important;
+  border-right: 1px solid rgba(var(--outline-variant-rgb), 0.2) !important;
 }
 
 [dir="rtl"] #mobile-menu.active {
   transform: translateX(0) !important;
+}
+
+/* Hard-Hide for Desktop Screens (MD Breakpoint) */
+@media (min-width: 768px) {
+  #mobile-menu {
+    display: none !important;
+  }
 }
 
 @keyframes scroll-hint {
