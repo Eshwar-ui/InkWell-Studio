@@ -1,0 +1,44 @@
+/* Inkwell Studio — Dark Mode Enhancements */
+
+.dark {
+  /* DARK MODE (Standard) */
+  --surface-rgb: 28, 27, 27;
+  --surface-container-rgb: 42, 41, 41;
+  --surface-dim-rgb: 17, 16, 16;
+  --surface-low-rgb: 36, 35, 35;
+  --primary-rgb: 255, 255, 255;
+  --on-primary-rgb: 0, 0, 0;
+  --secondary-rgb: 181, 38, 25; /* Blood Red remains consistent */
+  --on-surface-rgb: 240, 237, 236;
+  --on-surface-variant-rgb: 196, 199, 199;
+  --outline-variant-rgb: 196, 199, 199;
+
+  /* Force re-evaluation of high-level variables in this scope */
+  --surface: rgb(var(--surface-rgb));
+  --surface-container: rgb(var(--surface-container-rgb));
+  --surface-dim: rgb(var(--surface-dim-rgb));
+  --surface-low: rgb(var(--surface-low-rgb));
+  --primary: rgb(var(--primary-rgb));
+  --on-primary: rgb(var(--on-primary-rgb));
+  --secondary: rgb(var(--secondary-rgb));
+  --on-surface: rgb(var(--on-surface-rgb));
+  --on-surface-variant: rgb(var(--on-surface-variant-rgb));
+  --outline-variant: rgb(var(--outline-variant-rgb));
+}
+
+.dark #main-nav.nav-transparent:not(.scrolled) a:not(.text-secondary):not(.bg-secondary),
+.dark #main-nav.nav-transparent:not(.scrolled) button:not(.text-secondary):not(.bg-secondary),
+.dark #main-nav.nav-transparent:not(.scrolled) .font-newsreader:not(.text-secondary) {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.dark #main-nav.nav-transparent:not(.scrolled) .font-newsreader:not(.text-secondary) {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+.dark #dir-toggle[data-dir="ltr"] .rtl-label,
+.dark #dir-toggle[data-dir="rtl"] .ltr-label {
+  color: rgba(255, 255, 255, 0.4);
+}

@@ -29,19 +29,6 @@
   --outline-variant: rgb(var(--outline-variant-rgb));
 }
 
-.dark {
-  /* DARK MODE (Standard) */
-  --surface-rgb: 28, 27, 27;
-  --surface-container-rgb: 42, 41, 41;
-  --surface-dim-rgb: 17, 16, 16;
-  --surface-low-rgb: 36, 35, 35;
-  --primary-rgb: 255, 255, 255;
-  --on-primary-rgb: 0, 0, 0;
-  --secondary-rgb: 181, 38, 25; /* Blood Red remains consistent */
-  --on-surface-rgb: 240, 237, 236;
-  --on-surface-variant-rgb: 196, 199, 199;
-  --outline-variant-rgb: 196, 199, 199;
-}
 
 /* Base Styles */
 * {
@@ -202,22 +189,12 @@ h1, h2, h3, h4, h5, h6, .editorial {
   border-color: rgba(255, 255, 255, 0.3) !important;
 }
 
-.dark #main-nav.nav-transparent:not(.scrolled) a:not(.text-secondary):not(.bg-secondary),
-.dark #main-nav.nav-transparent:not(.scrolled) button:not(.text-secondary):not(.bg-secondary),
-.dark #main-nav.nav-transparent:not(.scrolled) .font-newsreader:not(.text-secondary) {
-  color: #ffffff !important;
-  opacity: 1;
-}
 
 #main-nav.nav-transparent:not(.scrolled) .font-newsreader {
   color: var(--on-surface) !important;
   opacity: 1;
 }
 
-.dark #main-nav.nav-transparent:not(.scrolled) .font-newsreader:not(.text-secondary) {
-  color: #ffffff !important;
-  opacity: 1;
-}
 
 /* Ensure dropdown links inside transparent nav remain legible */
 #main-nav.nav-transparent:not(.scrolled) .group-hover\:visible a:not(.text-secondary) {
@@ -246,57 +223,6 @@ h1, h2, h3, h4, h5, h6, .editorial {
   transform: translateY(0);
 }
 
-/* Bi-Directional Support (RTL/LTR) */
-[dir="rtl"] {
-  text-align: right;
-}
-
-[dir="rtl"] .ml-auto {
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-
-[dir="rtl"] .mr-auto {
-  margin-right: 0 !important;
-  margin-left: auto !important;
-}
-
-/* Flip Icons and directional elements */
-[dir="rtl"] .lucide-chevron-right,
-[dir="rtl"] .lucide-arrow-right {
-  transform: rotate(180deg);
-}
-
-[dir="rtl"] .lucide-chevron-left,
-[dir="rtl"] .lucide-arrow-left {
-  transform: rotate(180deg);
-}
-
-/* Specific layout overrides */
-[dir="rtl"] .fixed.top-0.left-0 {
-  left: auto !important;
-  right: 0 !important;
-}
-
-[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
-}
-
-[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
-}
-
-[dir="rtl"] .space-x-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
-}
-
-[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
-}
-
-[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
-}
 
 /* Premium Direction Toggle (Pill Style) */
 #dir-toggle {
@@ -331,10 +257,6 @@ h1, h2, h3, h4, h5, h6, .editorial {
   opacity: 0.4 !important;
 }
 
-.dark #dir-toggle[data-dir="ltr"] .rtl-label,
-.dark #dir-toggle[data-dir="rtl"] .ltr-label {
-  color: rgba(255, 255, 255, 0.4);
-}
 
 /* Symmetrical Mobile Menu (RTL/LTR Support) */
 #mobile-menu {
@@ -358,18 +280,6 @@ h1, h2, h3, h4, h5, h6, .editorial {
   transform: translateX(0) !important;
 }
 
-/* RTL Override (Left-anchored) */
-[dir="rtl"] #mobile-menu {
-  right: auto !important;
-  left: 0 !important;
-  transform: translateX(-101%) !important;
-  border-left: none !important;
-  border-right: 1px solid rgba(var(--outline-variant-rgb), 0.2) !important;
-}
-
-[dir="rtl"] #mobile-menu.active {
-  transform: translateX(0) !important;
-}
 
 /* Hard-Hide for Desktop Screens (MD Breakpoint) */
 @media (min-width: 768px) {
