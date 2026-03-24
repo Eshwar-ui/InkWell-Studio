@@ -56,10 +56,9 @@
 </head>
 <body class="bg-surface text-on-surface font-inter">
 
-            <!-- ========== NAVIGATION ========== -->
     <!-- ========== NAVIGATION ========== -->
     <nav id="main-nav"
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 nav-transparent border-b border-outline-variant/10">
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 nav-transparent backdrop-blur-sm border-b border-outline-variant/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Logo -->
             <a href="../index.html" class="flex items-center transition-opacity hover:opacity-80">
@@ -126,10 +125,10 @@
             <!-- Actions -->
             <div class="flex items-center space-x-3 md:space-x-5">
                 <!-- Direction Toggle -->
-                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                    <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 left-1 shadow-lg shadow-secondary/20"></div>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                    <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                    <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                    <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                 </div>
 
                 <button id="mode-toggle" class="hidden md:block p-2 hover:bg-surface-container transition-colors"
@@ -160,9 +159,7 @@
         </div>
     </nav>
 
-
-
-            <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="bg-surface/95 backdrop-blur-xl transition-transform duration-500 flex flex-col md:hidden p-6 overflow-y-auto">
         <div class="flex items-center justify-between pb-6 border-b border-outline-variant/30">
             <span class="text-3xl font-newsreader font-bold italic text-secondary tracking-tight">Menu</span>
@@ -216,10 +213,10 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-widest opacity-50">Direction</span>
-                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                        <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 start-1 shadow-lg shadow-secondary/20"></div>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                        <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                        <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                        <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                     </div>
                 </div>
             </div>
@@ -540,7 +537,7 @@
         </section>
     </main>
 
-            <!-- ========== FOOTER ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="bg-surface pt-12 pb-8 md:pt-16 md:pb-10 border-t border-outline-variant">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8 md:gap-12 lg:gap-24 mb-6 md:mb-8">
@@ -617,9 +614,10 @@
         </div>
     </footer>
 
-
-
     <!-- Core Scripts -->
     <script src="../assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

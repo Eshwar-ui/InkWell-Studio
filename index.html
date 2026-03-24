@@ -130,10 +130,10 @@
             <!-- Actions -->
             <div class="flex items-center space-x-3 md:space-x-5">
                 <!-- Direction Toggle (Hidden on Mobile, Moved to Menu) -->
-                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300" data-dir="ltr">
-                    <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 left-1 shadow-lg shadow-secondary/20"></div>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                    <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                    <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                    <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                 </div>
 
                 <button id="mode-toggle" class="hidden md:block p-2 hover:bg-surface-container transition-colors"
@@ -191,7 +191,7 @@
             <a href="pages/services.html" class="font-newsreader text-2xl font-bold">Services</a>
             <a href="pages/about.html" class="font-newsreader text-2xl font-bold">About</a>
             <a href="pages/contact.html" class="font-newsreader text-2xl font-bold">Contact</a>
- 
+
             <div class="space-y-6">
                 <button class="w-full flex items-center justify-between font-newsreader text-2xl font-bold group" data-dropdown-toggle="dashboards">
                     <span>Dashboards</span>
@@ -220,10 +220,10 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-widest opacity-50">Direction</span>
-                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                        <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 start-1 shadow-lg shadow-secondary/20"></div>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300">
+                        <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
+                        <span class="ltr-label text-[8px] font-bold z-10 transition-colors">LTR</span>
+                        <span class="rtl-label text-[8px] font-bold z-10 transition-colors">RTL</span>
                     </div>
                 </div>
             </div>
@@ -578,7 +578,7 @@
                             first step is a digital enrollment. No travel required until your private session.</p>
                     </div>
                     <div class="pt-4 flex flex-col items-center space-y-8">
-                        <a href="consultation.html"
+                        <a href="pages/consultation.html"
                             class="inline-block bg-secondary text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all btn-sheen hover:scale-105 shadow-2xl">Initialize
                             Enrollment</a>
                     </div>

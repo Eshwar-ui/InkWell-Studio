@@ -56,7 +56,8 @@
 </head>
 <body class="bg-surface text-on-surface font-inter">
 
-    <!-- ========== NAVIGATION ========== -->    <nav id="main-nav"
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="main-nav"
         class="fixed top-0 left-0 w-full z-50 transition-all duration-300 nav-transparent backdrop-blur-sm border-b border-outline-variant/10 nav-dark-hero">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Logo -->
@@ -64,7 +65,7 @@
                 <div class="relative flex items-center justify-center mr-2">
                     <img src="../assets/images/logo-icon.svg" alt="Inkwell Studio Logo Icon" class="w-8 h-8">
                 </div>
-                <span class="font-newsreader text-2xl font-bold tracking-tight">Inkwell Studio</span>
+                <span class="font-newsreader text-2xl font-bold tracking-tight text-white">Inkwell Studio</span>
             </a>
 
             <!-- Desktop Links -->
@@ -90,18 +91,18 @@
                 </div>
 
                 <a href="portfolio.html"
-                    class="font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors">Portfolio</a>
+                    class="font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors text-white/90">Portfolio</a>
                 <a href="services.html"
-                    class="font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors">Services</a>
+                    class="font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors text-white/90">Services</a>
                 <a href="about.html"
-                    class="font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors">About</a>
+                    class="font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors text-white/90">About</a>
                 <a href="contact.html"
-                    class="font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors">Contact</a>
+                    class="font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors text-white/90">Contact</a>
 
                 <!-- Dashboard Dropdown -->
                 <div class="relative group">
                     <button
-                        class="flex items-center space-x-1 font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors">
+                        class="flex items-center space-x-1 font-semibold uppercase text-xs tracking-[0.08em] hover:text-secondary transition-colors text-white/90">
                         <span>Dashboard</span>
                         <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
@@ -124,13 +125,13 @@
             <!-- Actions -->
             <div class="flex items-center space-x-3 md:space-x-5">
                 <!-- Direction Toggle -->
-                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                    <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 left-1 shadow-lg shadow-secondary/20"></div>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container/20 backdrop-blur-md rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                    <span class="ltr-label text-[8px] font-bold transition-colors text-white/90">LTR</span>
+                    <span class="rtl-label text-[8px] font-bold transition-colors text-white/90">RTL</span>
+                    <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                 </div>
 
-                <button id="mode-toggle" class="hidden md:block p-2 hover:bg-surface-container transition-colors"
+                <button id="mode-toggle" class="hidden md:block p-2 hover:bg-white/10 transition-colors text-white"
                     aria-label="Toggle Dark Mode">
                     <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -143,12 +144,12 @@
                 </button>
                 <div class="hidden lg:flex items-center space-x-4">
                     <a href="consultation.html"
-                        class="px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] border border-outline-variant hover:border-secondary transition-all">Book
+                        class="px-5 py-2.5 text-xs font-bold uppercase tracking-[0.08em] border border-white/20 hover:border-secondary transition-all text-white">Book
                         Now</a>
                     <a href="login.html"
                         class="bg-secondary text-white px-6 py-2.5 text-xs font-bold uppercase tracking-[0.08em] hover:brightness-110 transition-all btn-sheen">Login</a>
                 </div>
-                <button id="menu-toggle" class="md:hidden p-2" aria-label="Open Menu">
+                <button id="menu-toggle" class="md:hidden p-2 text-white" aria-label="Open Menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M4 6h16M4 12h16M4 18h16"></path>
@@ -202,7 +203,7 @@
                     <button id="mobile-mode-toggle" class="p-2 bg-surface-container rounded-full transition-colors flex items-center gap-2" aria-label="Toggle Dark Mode">
                         <!-- Moon icon -->
                         <svg class="w-4 h-4 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-                           <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8 0 1010.586 10.586z"></path>
+                           <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                        </svg>
                        <!-- Sun icon -->
                        <svg class="w-4 h-4 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
@@ -212,10 +213,10 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-widest opacity-50">Direction</span>
-                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                        <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 start-1 shadow-lg shadow-secondary/20"></div>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                        <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                        <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                        <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                     </div>
                 </div>
             </div>
@@ -428,7 +429,7 @@
                     <p class="text-white/70 max-w-sm text-lg md:text-xl font-newsreader leading-relaxed italic">
                         Escape the clinical. Our central London studio is designed as a sanctuary for collaborative creation and artistic depth.
                     </p>
-                    <a href="about.html" class="inline-block bg-secondary text-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] transition-all btn-sheen hover:scale-105 shadow-2xl">Explore the Space</a>
+                    <a href="about.html" class="inline-block bg-secondary text-white px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] transition-all btn-sheen hover:scale-105 shadow-2xl text-center">Explore the Space</a>
                 </div>
             </div>
         </section>
@@ -669,9 +670,10 @@
         </div>
     </footer>
 
-
-
     <!-- Core Scripts -->
     <script src="../assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

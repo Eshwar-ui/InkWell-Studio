@@ -56,7 +56,6 @@
 </head>
 <body class="bg-surface text-on-surface font-inter">
 
-            <!-- ========== NAVIGATION ========== -->
     <!-- ========== NAVIGATION ========== -->
     <nav id="main-nav"
         class="fixed top-0 left-0 w-full z-50 transition-all duration-300 nav-transparent border-b border-outline-variant/10">
@@ -126,10 +125,10 @@
             <!-- Actions -->
             <div class="flex items-center space-x-3 md:space-x-5">
                 <!-- Direction Toggle -->
-                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                    <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 left-1 shadow-lg shadow-secondary/20"></div>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                    <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                    <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                    <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                 </div>
 
                 <button id="mode-toggle" class="hidden md:block p-2 hover:bg-surface-container transition-colors"
@@ -160,9 +159,6 @@
         </div>
     </nav>
 
-
-
-            <!-- Mobile Menu Overlay -->
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="bg-surface/95 backdrop-blur-xl transition-transform duration-500 flex flex-col md:hidden p-6 overflow-y-auto">
         <div class="flex items-center justify-between pb-6 border-b border-outline-variant/30">
@@ -217,10 +213,10 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-widest opacity-50">Direction</span>
-                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                        <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 start-1 shadow-lg shadow-secondary/20"></div>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                        <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                        <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                        <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                     </div>
                 </div>
             </div>
@@ -234,7 +230,6 @@
                     class="flex-1 text-center bg-secondary text-white py-3 text-[10px] font-bold uppercase tracking-[0.1em] btn-sheen">Login</a>
             </div>
         </div>
-    </div>
     </div>
 
     <main id="main-content">
@@ -276,7 +271,7 @@
                         </div>
                     </div>
 
-                    <!-- Colorful Short Map Integration -->
+                    <!-- Map Integration -->
                     <div class="relative aspect-[2/1] bg-surface-dim overflow-hidden group shadow-xl border border-outline-variant/10">
                          <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.871926665715!2d-0.0573967232049!3d51.54592477182281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761d1d8a4369e1%3A0xe67f9d863f6087d1!2sFoundry%20Ln%2C%20London%20E8%204DZ%2C%20UK!5e0!3m2!1sen!2sus!4v1711100000000!5m2!1sen!2sus" 
@@ -341,61 +336,45 @@
                 </div>
             </div>
         </section>
-    </main>
 
-        <!-- ========== PHILOSOPHICAL FAQ (Inquiry Sync) ========== -->
+        <!-- ========== STUDIO PROTOCOL ========== -->
         <section class="py-16 bg-surface-dim border-t border-outline-variant/10">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-8 max-w-2xl mx-auto space-y-3">
+                <div class="text-center mb-12 max-w-2xl mx-auto space-y-3">
                     <span class="text-secondary font-bold uppercase tracking-[0.4em] text-[10px]">Preparation</span>
                     <h2 class="font-newsreader text-3xl md:text-4xl font-bold tracking-editorial leading-tight italic">Studio Protocol.</h2>
                 </div>
 
                 <div class="max-w-3xl mx-auto space-y-4">
-                    <!-- FAQ 1 -->
-                    <div class="group border-b border-outline-variant/30">
-                        <button class="w-full py-5 flex items-center justify-between text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon-plus').classList.toggle('rotate-45')">
+                    <details class="group border-b border-outline-variant/30">
+                        <summary class="w-full py-5 flex items-center justify-between text-left cursor-pointer list-none focus:outline-none group-hover:text-secondary transition-colors">
                             <span class="font-newsreader text-lg md:text-xl font-bold">When do the inquiry books open?</span>
-                            <div class="icon-plus transition-transform duration-500 text-secondary">
-                                <i data-lucide="plus" class="w-5 h-5"></i>
-                            </div>
-                        </button>
-                        <div class="hidden pb-8 animate-fade-in">
-                            <p class="text-on-surface-variant text-sm md:text-base font-newsreader italic leading-relaxed opacity-70 max-w-xl">
-                                We open books quarterly. The best way to secure a spot is to register a client account and join the waitlist. Priority is given to narratives that align with our current architectural focus.
-                            </p>
+                            <i data-lucide="plus" class="w-5 h-5 transition-transform duration-500 group-open:rotate-45"></i>
+                        </summary>
+                        <div class="pb-8 text-on-surface-variant text-sm md:text-base font-newsreader italic leading-relaxed opacity-70">
+                            We open books quarterly. The best way to secure a spot is to register a client account and join the waitlist. Priority is given to narratives that align with our current architectural focus.
                         </div>
-                    </div>
+                    </details>
 
-                    <!-- FAQ 2 -->
-                    <div class="group border-b border-outline-variant/30">
-                        <button class="w-full py-5 flex items-center justify-between text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon-plus').classList.toggle('rotate-45')">
+                    <details class="group border-b border-outline-variant/30">
+                        <summary class="w-full py-5 flex items-center justify-between text-left cursor-pointer list-none focus:outline-none group-hover:text-secondary transition-colors">
                             <span class="font-newsreader text-lg md:text-xl font-bold">Is the studio open for walk-ins?</span>
-                            <div class="icon-plus transition-transform duration-500 text-secondary">
-                                <i data-lucide="plus" class="w-5 h-5"></i>
-                            </div>
-                        </button>
-                        <div class="hidden pb-8 animate-fade-in">
-                            <p class="text-on-surface-variant text-sm md:text-base font-newsreader italic leading-relaxed opacity-70 max-w-xl">
-                                Inkwell is a private, appointment-only sanctuary. We do not accept walk-ins to maintain the clinical focus and editorial calm throughout our deep-narrative sessions.
-                            </p>
+                            <i data-lucide="plus" class="w-5 h-5 transition-transform duration-500 group-open:rotate-45"></i>
+                        </summary>
+                        <div class="pb-8 text-on-surface-variant text-sm md:text-base font-newsreader italic leading-relaxed opacity-70">
+                            Inkwell is a private, appointment-only sanctuary. We do not accept walk-ins to maintain the clinical focus and editorial calm throughout our deep-narrative sessions.
                         </div>
-                    </div>
+                    </details>
 
-                    <!-- FAQ 3 -->
-                    <div class="group border-b border-outline-variant/30">
-                        <button class="w-full py-5 flex items-center justify-between text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon-plus').classList.toggle('rotate-45')">
+                    <details class="group border-b border-outline-variant/30">
+                        <summary class="w-full py-5 flex items-center justify-between text-left cursor-pointer list-none focus:outline-none group-hover:text-secondary transition-colors">
                             <span class="font-newsreader text-lg md:text-xl font-bold">What is the studio guest policy?</span>
-                            <div class="icon-plus transition-transform duration-500 text-secondary">
-                                <i data-lucide="plus" class="w-5 h-5"></i>
-                            </div>
-                        </button>
-                        <div class="hidden pb-8 animate-fade-in">
-                            <p class="text-on-surface-variant text-sm md:text-base font-newsreader italic leading-relaxed opacity-70 max-w-xl">
-                                To preserve the quiet, focused atmosphere of our studio, we ask that you come alone to your session. We treat every appointment as a private exhibition.
-                            </p>
+                            <i data-lucide="plus" class="w-5 h-5 transition-transform duration-500 group-open:rotate-45"></i>
+                        </summary>
+                        <div class="pb-8 text-on-surface-variant text-sm md:text-base font-newsreader italic leading-relaxed opacity-70">
+                            To preserve the quiet, focused atmosphere of our studio, we ask that you come alone to your session. We treat every appointment as a private exhibition.
                         </div>
-                    </div>
+                    </details>
                 </div>
             </div>
         </section>
@@ -478,15 +457,10 @@
         </div>
     </footer>
 
-
-
     <!-- Core Scripts -->
     <script src="../assets/js/main.js"></script>
     <script>
-        // Initialize Lucide Icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+        lucide.createIcons();
     </script>
 </body>
 </html>

@@ -131,10 +131,10 @@
             <!-- Actions -->
             <div class="flex items-center space-x-3 md:space-x-5">
                 <!-- Direction Toggle -->
-                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                    <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 left-1 shadow-lg shadow-secondary/20"></div>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                    <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                <div id="dir-toggle" class="hidden md:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                    <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                    <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                    <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                 </div>
 
                 <button id="mode-toggle" class="hidden md:block p-2 hover:bg-surface-container transition-colors"
@@ -221,10 +221,10 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <span class="text-xs font-bold uppercase tracking-widest opacity-50">Direction</span>
-                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[88px] h-8 items-center group transition-all duration-300">
-                        <div class="dir-knob absolute h-6 w-10 bg-secondary rounded-full transition-all duration-300 start-1 shadow-lg shadow-secondary/20"></div>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors ltr-label">LTR</span>
-                        <span class="flex-1 text-center text-[9px] font-bold z-10 transition-colors rtl-label">RTL</span>
+                    <div id="mobile-dir-toggle" class="relative flex bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300" data-dir="ltr">
+                        <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                        <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                        <div class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20"></div>
                     </div>
                 </div>
             </div>
