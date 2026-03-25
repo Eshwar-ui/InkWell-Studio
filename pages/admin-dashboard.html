@@ -165,26 +165,31 @@
 
         <!-- Header -->
         <header
-            class="h-20 bg-surface border-b border-outline-variant px-4 md:px-8 flex items-center justify-between sticky top-0 z-40">
+            class="h-20 bg-surface border-b border-outline-variant px-4 md:px-12 flex items-center justify-between sticky top-0 z-40 bg-surface/80 backdrop-blur-xl">
             <div class="flex items-center space-x-4 md:space-x-6">
                 <button id="sidebar-toggle" class="lg:hidden p-2 hover:bg-surface-container transition-colors"
                     aria-label="Toggle Navigation">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
                 <div class="space-y-0.5">
-                    <h2 id="section-title" class="text-xs font-bold uppercase tracking-[0.3em] text-secondary">Studio
+                    <h2 id="section-title" class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-secondary">Studio
                         Admin</h2>
-                    <p class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest opacity-40">Inkwell Studio
+                    <p class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest opacity-40">Inkwell Studio
                         Management Console</p>
                 </div>
             </div>
 
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-4 md:space-x-6">
                 <!-- Direction & Theme Toggle (Header) -->
-                <div class="flex items-center space-x-3 md:pr-6 md:border-r border-outline-variant">
+                <div class="flex items-center space-x-2 md:space-x-3 md:pr-6 md:border-r border-outline-variant">
+                    <button id="mode-toggle" class="p-2 hover:bg-surface-container transition-colors group"
+                        aria-label="Toggle Theme">
+                        <i data-lucide="sun" class="w-5 h-5 opacity-40 group-hover:opacity-100 dark:block hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 opacity-40 group-hover:opacity-100 block dark:hidden"></i>
+                    </button>
                     <!-- Global RTL Toggle -->
                     <div id="dir-toggle"
-                        class="hidden lg:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300 me-2"
+                        class="hidden lg:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300 ms-2"
                         data-dir="ltr">
                         <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
                         <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
@@ -192,20 +197,14 @@
                             class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20">
                         </div>
                     </div>
-                    <button id="mode-toggle" class="p-2 hover:bg-surface-container transition-colors group"
-                        aria-label="Toggle Theme">
-                        <i data-lucide="sun" class="w-5 h-5 opacity-40 group-hover:opacity-100 dark:block hidden"></i>
-                        <i data-lucide="moon" class="w-5 h-5 opacity-40 group-hover:opacity-100 block dark:hidden"></i>
-                    </button>
                 </div>
 
-                <div class="hidden md:flex items-center space-x-6 pl-2">
+                <div class="flex items-center space-x-3 md:space-x-6 md:pl-2">
                     <div class="text-right hidden sm:block">
-                        <p class="text-xs font-bold uppercase tracking-widest leading-none mb-1">Studio Administrator
-                        </p>
-                        <p class="text-[10px] uppercase tracking-widest opacity-60">System Overseer #0001</p>
+                        <p class="text-xs font-bold uppercase tracking-widest leading-none mb-1">Studio Administrator</p>
+                        <p class="text-[10px] uppercase tracking-widest opacity-40">System Overseer #0001</p>
                     </div>
-                    <div class="w-12 h-12 bg-surface-container border border-outline-variant p-1">
+                    <div class="hidden sm:block w-10 h-10 md:w-12 md:h-12 bg-surface-container border border-outline-variant p-1">
                         <img src="../assets/images/admin-portrait.png" alt="Admin Profile"
                             class="w-full h-full object-cover grayscale opacity-60">
                     </div>
@@ -217,69 +216,65 @@
         <div id="content-area" class="flex-1 relative overflow-y-auto">
 
             <!-- SECTION: OVERVIEW -->
-            <section id="overview-section" class="p-8 md:p-12 space-y-16">
+            <section id="overview-section" class="p-6 md:p-12 space-y-8 md:space-y-16">
                 <!-- Stat Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
                     <!-- Stat Card: Revenue -->
                     <div
-                        class="bg-surface-container p-12 space-y-6 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative shadow-sm">
+                        class="bg-surface-container p-5 md:p-12 space-y-3 md:space-y-6 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative shadow-sm">
                         <div
-                            class="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity">
-                            <i data-lucide="trending-up" class="w-16 h-16 text-secondary"></i>
+                            class="absolute top-0 right-0 p-4 md:p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="trending-up" class="w-10 h-10 md:w-16 md:h-16 text-secondary"></i>
                         </div>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">Inbound Analytics</p>
-                        <div class="space-y-2">
-                            <span class="font-newsreader text-5xl font-bold italic tracking-tighter block">£1,242</span>
+                        <p class="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-secondary">Inbound</p>
+                        <div class="space-y-1 md:space-y-2">
+                            <span class="font-newsreader text-2xl md:text-5xl font-bold italic tracking-tighter block">£1,242</span>
                             <span
-                                class="text-[8px] text-green-500 font-bold uppercase tracking-widest opacity-80">+14.2%
-                                Growth Index</span>
+                                class="text-[7px] md:text-[8px] text-green-500 font-bold uppercase tracking-widest opacity-80">+14.2%</span>
                         </div>
                     </div>
                     <!-- Stat Card: Projects -->
                     <div
-                        class="bg-surface-container p-12 space-y-6 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative shadow-sm">
+                        class="bg-surface-container p-5 md:p-12 space-y-3 md:space-y-6 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative shadow-sm">
                         <div
-                            class="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity">
-                            <i data-lucide="clipboard-list" class="w-16 h-16 text-secondary"></i>
+                            class="absolute top-0 right-0 p-4 md:p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="clipboard-list" class="w-10 h-10 md:w-16 md:h-16 text-secondary"></i>
                         </div>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">Active Narratives</p>
-                        <div class="space-y-2">
-                            <span class="font-newsreader text-5xl font-bold italic tracking-tighter block">28</span>
-                            <span class="text-[8px] font-bold uppercase tracking-widest opacity-60">+03 Priority
-                                Inbound</span>
+                        <p class="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-secondary">Narratives</p>
+                        <div class="space-y-1 md:space-y-2">
+                            <span class="font-newsreader text-2xl md:text-5xl font-bold italic tracking-tighter block">28</span>
+                            <span class="text-[7px] md:text-[8px] font-bold uppercase tracking-widest opacity-60">+03 Priority</span>
                         </div>
                     </div>
                     <!-- Stat Card: Stencils -->
                     <div
-                        class="bg-surface-container p-12 space-y-6 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative shadow-sm">
+                        class="bg-surface-container p-5 md:p-12 space-y-3 md:space-y-6 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative shadow-sm">
                         <div
-                            class="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity">
-                            <i data-lucide="pen-tool" class="w-16 h-16 text-secondary"></i>
+                            class="absolute top-0 right-0 p-4 md:p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="pen-tool" class="w-10 h-10 md:w-16 md:h-16 text-secondary"></i>
                         </div>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">Stencil Protocols</p>
-                        <div class="space-y-2">
-                            <span class="font-newsreader text-5xl font-bold italic tracking-tighter block">09</span>
-                            <span class="text-[8px] font-bold uppercase tracking-widest opacity-40">Scheduled for
-                                Today</span>
+                        <p class="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-secondary">Protocols</p>
+                        <div class="space-y-1 md:space-y-2">
+                            <span class="font-newsreader text-2xl md:text-5xl font-bold italic tracking-tighter block">09</span>
+                            <span class="text-[7px] md:text-[8px] font-bold uppercase tracking-widest opacity-40">Scheduled</span>
                         </div>
                     </div>
                     <!-- Stat Card: Yield -->
                     <div
-                        class="bg-surface-container p-12 space-y-6 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative shadow-sm">
+                        class="bg-surface-container p-5 md:p-12 space-y-3 md:space-y-6 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative shadow-sm">
                         <div
-                            class="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity">
-                            <i data-lucide="users" class="w-16 h-16 text-secondary"></i>
+                            class="absolute top-0 right-0 p-4 md:p-6 opacity-[0.05] group-hover:opacity-10 transition-opacity">
+                            <i data-lucide="users" class="w-10 h-10 md:w-16 md:h-16 text-secondary"></i>
                         </div>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-secondary">Lifetime Value</p>
-                        <div class="space-y-2">
-                            <span class="font-newsreader text-5xl font-bold italic tracking-tighter block">£650</span>
-                            <span class="text-[8px] font-bold uppercase tracking-widest opacity-40">Average Patron
-                                Yield</span>
+                        <p class="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-secondary">Value</p>
+                        <div class="space-y-1 md:space-y-2">
+                            <span class="font-newsreader text-2xl md:text-5xl font-bold italic tracking-tighter block">£650</span>
+                            <span class="text-[7px] md:text-[8px] font-bold uppercase tracking-widest opacity-40">Average</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid lg:grid-cols-3 gap-12 pt-20">
+                <div class="grid lg:grid-cols-3 gap-12 pt-8 md:pt-20">
                     <div class="lg:col-span-2 space-y-12">
                         <div class="flex items-end justify-between border-b border-outline-variant pb-8">
                             <h3 class="font-newsreader text-3xl font-bold italic tracking-tight uppercase">Inbound
@@ -388,18 +383,18 @@
             </section>
 
             <!-- SECTION: DESIGN REQUESTS -->
-            <section id="requests-section" class="hidden p-8 md:p-12 space-y-16">
+            <section id="requests-section" class="hidden p-6 md:p-12 space-y-12 md:space-y-16">
                 <div
-                    class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant pb-12">
+                    class="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12 border-b border-outline-variant pb-8 md:pb-12">
                     <div class="space-y-4 flex-1">
-                        <h1 class="font-newsreader text-7xl font-bold tracking-tighter whitespace-nowrap">Inquiries.
+                        <h1 class="font-newsreader text-5xl md:text-7xl font-bold tracking-tighter">Inquiries.
                             <span class="italic text-secondary opacity-40 not-italic text-on-surface">Queue.</span></h1>
                         <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface opacity-60">
                             Biological Intake & Project Feasibility Ledger</p>
                     </div>
-                    <div class="flex space-x-4 relative">
+                    <div class="flex space-x-4 relative w-full md:w-auto">
                         <select
-                            class="bg-surface-container border border-outline-variant px-8 py-3 text-[10px] font-bold uppercase tracking-widest focus:outline-none focus:border-secondary transition-colors appearance-none pr-12 cursor-pointer">
+                            class="bg-surface-container border border-outline-variant px-8 py-3 text-[10px] font-bold uppercase tracking-widest focus:outline-none focus:border-secondary transition-colors appearance-none pr-12 cursor-pointer w-full md:w-auto">
                             <option>Filter: All Requests</option>
                             <option>Filter: New Inbound</option>
                             <option>Filter: In Review</option>
@@ -412,77 +407,75 @@
                 <div class="space-y-1">
                     <!-- Julian Pierce -->
                     <div
-                        class="bg-surface-container p-10 grid lg:grid-cols-12 gap-8 items-center border-b border-outline-variant hover:bg-surface-dim transition-all group">
-                        <div class="lg:col-span-3 space-y-2">
+                        class="bg-surface-container p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-8 items-center border-b border-outline-variant hover:bg-surface-dim transition-all group">
+                        <div class="lg:col-span-3 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Principal Client</p>
                             <p class="font-newsreader text-2xl font-bold italic tracking-tight">Julian Pierce</p>
                         </div>
-                        <div class="lg:col-span-4 space-y-2">
+                        <div class="lg:col-span-4 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Project Manifesto</p>
                             <p class="text-xs font-bold uppercase tracking-[0.1em]">Neo-Japanese Backpiece</p>
                         </div>
-                        <div class="lg:col-span-2 space-y-2">
+                        <div class="lg:col-span-2 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-20">Estimated Value</p>
                             <p class="text-xs font-bold uppercase tracking-[0.1em] text-secondary">£2,400.00</p>
                         </div>
-                        <div class="lg:col-span-2">
+                        <div class="lg:col-span-2 relative z-10">
                             <span
-                                class="bg-secondary/10 text-secondary border border-secondary/20 px-4 py-2 text-[8px] font-bold uppercase tracking-[0.2em]">Stencil
-                                Review</span>
+                                class="inline-block whitespace-nowrap bg-secondary/10 text-secondary border border-secondary/20 px-4 py-2 text-[8px] font-bold uppercase tracking-[0.2em]">Stencil Review</span>
                         </div>
-                        <div class="lg:col-span-1 text-right">
-                            <button class="p-4 bg-surface-dim hover:bg-secondary hover:text-white transition-all">
+                        <div class="lg:col-span-1 text-left lg:text-right relative z-10">
+                            <button class="p-4 bg-surface-dim hover:bg-secondary hover:text-white transition-all w-full md:w-auto flex justify-center items-center">
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
                         </div>
                     </div>
                     <!-- Elena Rossi -->
                     <div
-                        class="bg-surface-container p-10 grid lg:grid-cols-12 gap-8 items-center border-b border-outline-variant hover:bg-surface-dim transition-all group">
-                        <div class="lg:col-span-3 space-y-2">
+                        class="bg-surface-container p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-8 items-center border-b border-outline-variant hover:bg-surface-dim transition-all group">
+                        <div class="lg:col-span-3 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Principal Client</p>
                             <p class="font-newsreader text-2xl font-bold italic tracking-tight">Elena Rossi</p>
                         </div>
-                        <div class="lg:col-span-4 space-y-2">
+                        <div class="lg:col-span-4 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Project Manifesto</p>
                             <p class="text-xs font-bold uppercase tracking-[0.1em]">Micro-Realism Anatomy</p>
                         </div>
-                        <div class="lg:col-span-2 space-y-2">
+                        <div class="lg:col-span-2 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-20">Estimated Value</p>
                             <p class="text-xs font-bold uppercase tracking-[0.1em] text-secondary">£750.00</p>
                         </div>
-                        <div class="lg:col-span-2">
+                        <div class="lg:col-span-2 relative z-10">
                             <span
-                                class="bg-secondary/10 text-secondary border border-secondary/20 px-4 py-2 text-[8px] font-bold uppercase tracking-[0.2em]">New
-                                Inbound</span>
+                                class="inline-block whitespace-nowrap bg-secondary/10 text-secondary border border-secondary/20 px-4 py-2 text-[8px] font-bold uppercase tracking-[0.2em]">New Inbound</span>
                         </div>
-                        <div class="lg:col-span-1 text-right">
-                            <button class="p-4 bg-surface-dim hover:bg-secondary hover:text-white transition-all">
+                        <div class="lg:col-span-1 text-left lg:text-right relative z-10">
+                            <button class="p-4 bg-surface-dim hover:bg-secondary hover:text-white transition-all w-full md:w-auto flex justify-center items-center">
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
                         </div>
                     </div>
                     <!-- Marcus Thorne -->
                     <div
-                        class="bg-surface-container p-10 grid lg:grid-cols-12 gap-8 items-center border-b border-outline-variant hover:bg-surface-dim transition-all group">
-                        <div class="lg:col-span-3 space-y-2">
+                        class="bg-surface-container p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-8 items-center border-b border-outline-variant hover:bg-surface-dim transition-all group">
+                        <div class="lg:col-span-3 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Principal Client</p>
                             <p class="font-newsreader text-2xl font-bold italic tracking-tight">Marcus Thorne</p>
                         </div>
-                        <div class="lg:col-span-4 space-y-2">
+                        <div class="lg:col-span-4 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Project Manifesto</p>
                             <p class="text-xs font-bold uppercase tracking-[0.1em]">Cyber-Sigilism Sleeve</p>
                         </div>
-                        <div class="lg:col-span-2 space-y-2">
+                        <div class="lg:col-span-2 space-y-1 md:space-y-2 relative z-10">
                             <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Estimated Value</p>
                             <p class="text-xs font-bold uppercase tracking-[0.1em]">£1,800.00</p>
                         </div>
-                        <div class="lg:col-span-2">
+                        <div class="lg:col-span-2 relative z-10">
                             <span
-                                class="bg-surface-dim text-on-surface opacity-40 border border-outline-variant px-4 py-2 text-[8px] font-bold uppercase tracking-[0.2em]">Rejected</span>
+                                class="inline-block whitespace-nowrap bg-surface-dim text-on-surface opacity-40 border border-outline-variant px-4 py-2 text-[8px] font-bold uppercase tracking-[0.2em]">Rejected</span>
                         </div>
-                        <div class="lg:col-span-1 text-right">
-                            <button class="p-4 bg-surface-dim hover:bg-secondary hover:text-white transition-all">
+                        <div class="lg:col-span-1 text-left lg:text-right relative z-10">
+                            <button class="p-4 bg-surface-dim hover:bg-secondary hover:text-white transition-all w-full md:w-auto flex justify-center items-center">
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
                         </div>
@@ -491,113 +484,113 @@
             </section>
 
             <!-- SECTION: CLIENTS -->
-            <section id="clients-section" class="hidden p-8 md:p-12 space-y-16 max-w-7xl mx-auto w-full">
+            <section id="clients-section" class="hidden p-6 md:p-12 space-y-12 md:space-y-16 max-w-7xl mx-auto w-full">
                 <div
-                    class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant pb-12">
+                    class="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12 border-b border-outline-variant pb-8 md:pb-12">
                     <div class="space-y-4">
-                        <h1 class="font-newsreader text-7xl font-bold tracking-tighter">Patrons. <span
+                        <h1 class="font-newsreader text-5xl md:text-7xl font-bold tracking-tighter">Patrons. <span
                                 class="italic text-secondary opacity-40 not-italic text-on-surface">Archive.</span></h1>
                         <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface opacity-60">
                             Comprehensive Biological Records & Collective Portfolio Ledger</p>
                     </div>
-                    <div class="flex space-x-4">
+                    <div class="flex space-x-4 w-full md:w-auto">
                         <input type="text" placeholder="Search Master Index..."
-                            class="bg-surface-container border border-outline-variant px-8 py-3 text-[10px] font-bold uppercase tracking-widest focus:outline-none focus:border-secondary transition-all w-80">
+                            class="bg-surface-container border border-outline-variant px-8 py-3 text-[10px] font-bold uppercase tracking-widest focus:outline-none focus:border-secondary transition-all w-full md:w-80">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     <!-- Julian Pierce -->
                     <div
-                        class="bg-surface-container p-12 border border-outline-variant hover:border-secondary transition-all space-y-10 group relative overflow-hidden">
+                        class="bg-surface-container p-6 md:p-12 border border-outline-variant hover:border-secondary transition-all space-y-6 md:space-y-10 group relative overflow-hidden">
                         <div
                             class="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity">
-                            <i data-lucide="user" class="w-24 h-24"></i>
+                            <i data-lucide="user" class="w-16 h-16 md:w-24 md:h-24"></i>
                         </div>
-                        <div class="flex items-center space-x-8">
+                        <div class="flex items-center space-x-4 md:space-x-8">
                             <div
-                                class="w-20 h-20 bg-surface-dim border border-outline-variant flex items-center justify-center font-bold text-2xl font-newsreader italic text-secondary">
+                                class="w-16 h-16 md:w-20 md:h-20 bg-surface-dim border border-outline-variant flex items-center justify-center font-bold text-xl md:text-2xl font-newsreader italic text-secondary shrink-0">
                                 JP</div>
                             <div class="space-y-1">
-                                <h3 class="font-newsreader text-3xl font-bold italic tracking-tight uppercase">Julian
+                                <h3 class="font-newsreader text-2xl md:text-3xl font-bold italic tracking-tight uppercase">Julian
                                     Pierce</h3>
-                                <p class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Patron ID:
+                                <p class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Patron ID:
                                     #INK-8821</p>
                             </div>
                         </div>
-                        <div class="space-y-6 pt-8 border-t border-outline-variant">
+                        <div class="space-y-4 md:space-y-6 pt-6 md:pt-8 border-t border-outline-variant">
                             <div class="flex justify-between items-baseline">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Artworks
+                                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Artworks
                                     Collected</span>
-                                <span class="text-xs font-bold uppercase">04 Sessions</span>
+                                <span class="text-[10px] md:text-xs font-bold uppercase">04 Sessions</span>
                             </div>
                             <div class="flex justify-between items-baseline">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Lifetime
+                                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Lifetime
                                     Value</span>
-                                <span class="text-lg font-newsreader font-bold italic text-secondary">£5,200.00</span>
+                                <span class="text-base md:text-lg font-newsreader font-bold italic text-secondary">£5,200.00</span>
                             </div>
                         </div>
                         <button
-                            class="w-full border border-outline-variant px-8 py-4 text-xs font-bold uppercase tracking-[0.1em] transition-all hover:bg-secondary hover:text-white hover:scale-105">Open
+                            class="w-full border border-outline-variant px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] transition-all hover:bg-secondary hover:text-white hover:scale-105">Open
                             Dossier</button>
                     </div>
                     <!-- Sarah Vance -->
                     <div
-                        class="bg-surface-container p-12 border border-outline-variant hover:border-secondary transition-all space-y-10 group relative overflow-hidden">
+                        class="bg-surface-container p-6 md:p-12 border border-outline-variant hover:border-secondary transition-all space-y-6 md:space-y-10 group relative overflow-hidden">
                         <div
                             class="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity">
-                            <i data-lucide="user" class="w-24 h-24"></i>
+                            <i data-lucide="user" class="w-16 h-16 md:w-24 md:h-24"></i>
                         </div>
-                        <div class="flex items-center space-x-8">
+                        <div class="flex items-center space-x-4 md:space-x-8">
                             <div
-                                class="w-20 h-20 bg-surface-dim border border-outline-variant flex items-center justify-center font-bold text-2xl font-newsreader italic text-secondary">
+                                class="w-16 h-16 md:w-20 md:h-20 bg-surface-dim border border-outline-variant flex items-center justify-center font-bold text-xl md:text-2xl font-newsreader italic text-secondary shrink-0">
                                 SV</div>
                             <div class="space-y-1">
-                                <h3 class="font-newsreader text-3xl font-bold italic tracking-tight uppercase">Sarah
+                                <h3 class="font-newsreader text-2xl md:text-3xl font-bold italic tracking-tight uppercase">Sarah
                                     Vance</h3>
-                                <p class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Patron ID:
+                                <p class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Patron ID:
                                     #INK-4429</p>
                             </div>
                         </div>
-                        <div class="space-y-6 pt-8 border-t border-outline-variant">
+                        <div class="space-y-4 md:space-y-6 pt-6 md:pt-8 border-t border-outline-variant">
                             <div class="flex justify-between items-baseline">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Artworks
+                                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Artworks
                                     Collected</span>
-                                <span class="text-xs font-bold uppercase">01 Session</span>
+                                <span class="text-[10px] md:text-xs font-bold uppercase">01 Session</span>
                             </div>
                             <div class="flex justify-between items-baseline">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Lifetime
+                                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Lifetime
                                     Value</span>
-                                <span class="text-lg font-newsreader font-bold italic text-secondary">£450.00</span>
+                                <span class="text-base md:text-lg font-newsreader font-bold italic text-secondary">£450.00</span>
                             </div>
                         </div>
                         <button
-                            class="w-full border border-outline-variant px-8 py-4 text-xs font-bold uppercase tracking-[0.1em] transition-all hover:bg-secondary hover:text-white hover:scale-105">Open
+                            class="w-full border border-outline-variant px-6 md:px-8 py-3 md:py-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] transition-all hover:bg-secondary hover:text-white hover:scale-105">Open
                             Dossier</button>
                     </div>
                 </div>
             </section>
 
             <!-- SECTION: FINANCIAL LEDGER -->
-            <section id="revenue-section" class="hidden p-8 md:p-12 space-y-20 max-w-7xl mx-auto w-full">
+            <section id="revenue-section" class="hidden p-6 md:p-12 space-y-12 md:space-y-20 max-w-7xl mx-auto w-full">
                 <div
-                    class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant pb-12">
+                    class="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12 border-b border-outline-variant pb-8 md:pb-12">
                     <div class="space-y-4">
-                        <h1 class="font-newsreader text-7xl font-bold tracking-tight">Revenue. <span
+                        <h1 class="font-newsreader text-5xl md:text-7xl font-bold tracking-tight">Revenue. <span
                                 class="italic text-secondary opacity-40 not-italic text-on-surface">Ledger.</span></h1>
                         <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface opacity-60">Financial
                             Analytics & Secure Transaction Protocol</p>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     <div
-                        class="p-8 bg-surface-container border border-outline-variant space-y-6 group hover:border-secondary transition-all">
+                        class="p-6 md:p-8 bg-surface-container border border-outline-variant space-y-4 md:space-y-6 group hover:border-secondary transition-all">
                         <span class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">Gross Inbound</span>
                         <p class="font-newsreader text-4xl lg:text-5xl font-bold italic tracking-tighter">£42,850</p>
                     </div>
                     <div
-                        class="p-8 bg-surface-container border border-outline-variant space-y-6 group hover:border-secondary transition-all">
+                        class="p-6 md:p-8 bg-surface-container border border-outline-variant space-y-4 md:space-y-6 group hover:border-secondary transition-all">
                         <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">Locked
                             Deposits</span>
                         <p
@@ -607,52 +600,52 @@
                     </div>
                 </div>
 
-                <div class="space-y-12">
-                    <div class="flex items-center justify-between">
+                <div class="space-y-8 md:space-y-12">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
                         <h2 class="font-newsreader text-3xl font-bold italic tracking-tight">Financial Protocol History
                         </h2>
                         <button
-                            class="border border-outline-variant px-8 py-4 text-xs font-bold uppercase tracking-[0.1em] transition-all hover:bg-secondary hover:text-white hover:scale-105">Export
+                            class="border border-outline-variant px-8 py-4 text-xs font-bold uppercase tracking-[0.1em] transition-all hover:bg-secondary hover:text-white hover:scale-105 w-full md:w-auto">Export
                             Statement</button>
                     </div>
-                    <div class="overflow-x-auto">
+                    <div class="overflow-x-auto md:overflow-hidden border border-outline-variant bg-surface-container">
                         <table class="w-full text-left">
                             <thead>
                                 <tr
                                     class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 border-b border-outline-variant">
-                                    <th class="py-6">Transaction ID</th>
-                                    <th class="py-6">Principal Patron</th>
-                                    <th class="py-6 text-right">Credit Value</th>
-                                    <th class="py-6 text-right">Timestamp</th>
+                                    <th class="py-6 px-4 md:px-10 hidden md:table-cell">Transaction ID</th>
+                                    <th class="py-6 px-4 md:px-10">Principal Patron</th>
+                                    <th class="py-6 px-4 md:px-10 text-right">Credit Value</th>
+                                    <th class="py-6 px-4 md:px-10 text-right hidden sm:table-cell">Timestamp</th>
                                 </tr>
                             </thead>
                             <tbody class="text-xs font-bold uppercase tracking-[0.1em]">
                                 <tr
-                                    class="border-b border-outline-variant group hover:bg-surface-container transition-colors">
-                                    <td class="py-8 opacity-40 font-mono tracking-tighter">INK-T-99201</td>
+                                    class="border-b border-outline-variant group hover:bg-surface-dim transition-colors">
+                                    <td class="py-6 md:py-8 px-4 md:px-10 opacity-40 font-mono tracking-tighter hidden md:table-cell">INK-T-99201</td>
                                     <td
-                                        class="py-8 font-newsreader text-2xl font-bold italic normal-case tracking-tight text-on-surface group-hover:text-secondary transition-colors">
+                                        class="py-6 md:py-8 px-4 md:px-10 font-newsreader text-base md:text-2xl font-bold italic normal-case tracking-tight text-on-surface group-hover:text-secondary transition-colors">
                                         Julianne Vance</td>
-                                    <td class="py-8 text-right text-secondary">+£150.00</td>
-                                    <td class="py-8 text-right opacity-20">18.03.2024</td>
+                                    <td class="py-6 md:py-8 px-4 md:px-10 text-right text-secondary">+£150.00</td>
+                                    <td class="py-6 md:py-8 px-4 md:px-10 text-right opacity-20 hidden sm:table-cell">18.03.2024</td>
                                 </tr>
                                 <tr
-                                    class="border-b border-outline-variant group hover:bg-surface-container transition-colors">
-                                    <td class="py-8 opacity-40 font-mono tracking-tighter">INK-T-99188</td>
+                                    class="border-b border-outline-variant group hover:bg-surface-dim transition-colors">
+                                    <td class="py-6 md:py-8 px-4 md:px-10 opacity-40 font-mono tracking-tighter hidden md:table-cell">INK-T-99188</td>
                                     <td
-                                        class="py-8 font-newsreader text-2xl font-bold italic normal-case tracking-tight text-on-surface group-hover:text-secondary transition-colors">
+                                        class="py-6 md:py-8 px-4 md:px-10 font-newsreader text-base md:text-2xl font-bold italic normal-case tracking-tight text-on-surface group-hover:text-secondary transition-colors">
                                         Marcus Reed</td>
-                                    <td class="py-8 text-right text-secondary">+£2,400.00</td>
-                                    <td class="py-8 text-right opacity-20">15.03.2024</td>
+                                    <td class="py-6 md:py-8 px-4 md:px-10 text-right text-secondary">+£2,400.00</td>
+                                    <td class="py-6 md:py-8 px-4 md:px-10 text-right opacity-20 hidden sm:table-cell">15.03.2024</td>
                                 </tr>
                                 <tr
-                                    class="border-b border-outline-variant group hover:bg-surface-container transition-colors">
-                                    <td class="py-8 opacity-40 font-mono tracking-tighter">INK-T-99150</td>
+                                    class="border-b border-outline-variant group hover:bg-surface-dim transition-colors">
+                                    <td class="py-6 md:py-8 px-4 md:px-10 opacity-40 font-mono tracking-tighter hidden md:table-cell">INK-T-99150</td>
                                     <td
-                                        class="py-8 font-newsreader text-2xl font-bold italic normal-case tracking-tight text-on-surface group-hover:text-secondary transition-colors">
+                                        class="py-6 md:py-8 px-4 md:px-10 font-newsreader text-base md:text-2xl font-bold italic normal-case tracking-tight text-on-surface group-hover:text-secondary transition-colors">
                                         Elena Rossi</td>
-                                    <td class="py-8 text-right text-red-500">-£75.00</td>
-                                    <td class="py-8 text-right opacity-20">10.03.2024</td>
+                                    <td class="py-6 md:py-8 px-4 md:px-10 text-right text-red-500">-£75.00</td>
+                                    <td class="py-6 md:py-8 px-4 md:px-10 text-right opacity-20 hidden sm:table-cell">10.03.2024</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -661,37 +654,57 @@
             </section>
 
             <!-- SECTION: CALENDAR -->
-            <section id="calendar-section" class="hidden h-full flex flex-col overflow-hidden min-h-[700px]">
-                <div class="p-10 border-b border-outline-variant flex justify-between items-center bg-surface-dim">
-                    <div class="flex items-center space-x-12">
-                        <h2 class="font-newsreader text-4xl font-bold italic tracking-tight">August <span
+            <section id="calendar-section" class="hidden h-full flex flex-col overflow-hidden min-h-[500px] md:min-h-[700px]">
+                <div class="p-6 md:p-10 border-b border-outline-variant flex flex-col md:flex-row justify-between items-center bg-surface-dim gap-6">
+                    <div class="flex items-center space-x-6 md:space-x-12">
+                        <h2 class="font-newsreader text-3xl md:text-4xl font-bold italic tracking-tight">August <span
                                 class="not-italic opacity-20">2024</span></h2>
-                        <div class="flex space-x-4">
+                        <div class="flex space-x-2 md:space-x-4">
                             <button
-                                class="p-3 border border-outline-variant hover:bg-surface-container transition-colors"><i
+                                class="p-2 md:p-3 border border-outline-variant hover:bg-surface-container transition-colors"><i
                                     data-lucide="chevron-left" class="w-4 h-4"></i></button>
                             <button
-                                class="p-3 border border-outline-variant hover:bg-surface-container transition-colors"><i
+                                class="p-2 md:p-3 border border-outline-variant hover:bg-surface-container transition-colors"><i
                                     data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
                     </div>
                     <button
-                        class="bg-secondary text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.1em] transition-all btn-sheen hover:scale-105">Schedule
+                        class="bg-secondary text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.1em] transition-all btn-sheen hover:scale-105 w-full md:w-auto">Schedule
                         Block</button>
                 </div>
 
-                <div class="flex-1 overflow-x-auto custom-scrollbar">
-                    <div class="min-w-[800px] lg:min-w-full h-full flex flex-col">
+                <div class="flex-1 overflow-hidden">
+                    <div class="w-full h-full flex flex-col">
                         <div
-                            class="grid grid-cols-7 bg-surface-dim text-[10px] font-bold uppercase tracking-[0.4em] border-b border-outline-variant">
-                            <div class="p-6 border-r border-outline-variant text-center opacity-20">Monday</div>
-                            <div class="p-6 border-r border-outline-variant text-center opacity-20">Tuesday</div>
-                            <div class="p-6 border-r border-outline-variant text-center opacity-20">Wednesday</div>
-                            <div class="p-6 border-r border-outline-variant text-center opacity-20">Thursday</div>
-                            <div class="p-6 border-r border-outline-variant text-center opacity-20">Friday</div>
-                            <div class="p-6 border-r border-outline-variant text-center opacity-20 text-secondary">
-                                Saturday</div>
-                            <div class="p-6 text-center opacity-20 text-secondary">Sunday</div>
+                            class="grid grid-cols-7 bg-surface-dim text-[8px] md:text-[10px] font-bold uppercase tracking-tight md:tracking-[0.4em] border-b border-outline-variant">
+                            <div class="p-2 md:p-6 border-r border-outline-variant text-center opacity-20">
+                                <span class="hidden md:block">Monday</span>
+                                <span class="md:hidden">M</span>
+                            </div>
+                            <div class="p-2 md:p-6 border-r border-outline-variant text-center opacity-20">
+                                <span class="hidden md:block">Tuesday</span>
+                                <span class="md:hidden">T</span>
+                            </div>
+                            <div class="p-2 md:p-6 border-r border-outline-variant text-center opacity-20">
+                                <span class="hidden md:block">Wednesday</span>
+                                <span class="md:hidden">W</span>
+                            </div>
+                            <div class="p-2 md:p-6 border-r border-outline-variant text-center opacity-20">
+                                <span class="hidden md:block">Thursday</span>
+                                <span class="md:hidden">T</span>
+                            </div>
+                            <div class="p-2 md:p-6 border-r border-outline-variant text-center opacity-20">
+                                <span class="hidden md:block">Friday</span>
+                                <span class="md:hidden">F</span>
+                            </div>
+                            <div class="p-2 md:p-6 border-r border-outline-variant text-center opacity-20 text-secondary">
+                                <span class="hidden md:block">Saturday</span>
+                                <span class="md:hidden">S</span>
+                            </div>
+                            <div class="p-2 md:p-6 text-center opacity-20 text-secondary">
+                                <span class="hidden md:block">Sunday</span>
+                                <span class="md:hidden">S</span>
+                            </div>
                         </div>
                         <div id="calendar-grid" class="flex-1 grid grid-cols-7 bg-surface">
                             <!-- JS Injected Days -->
@@ -804,15 +817,15 @@
                             </div>
                         </header>
 
-                        <div class="flex-1 overflow-y-auto p-12 space-y-12 pb-32">
+                        <div class="flex-1 overflow-y-auto p-6 md:p-12 space-y-8 md:space-y-12 pb-32">
                             <!-- Incoming Message -->
-                            <div class="flex gap-8 max-w-4xl">
+                            <div class="flex flex-col md:flex-row gap-4 md:gap-8 max-w-4xl">
                                 <div
                                     class="w-10 h-10 bg-surface-dim border border-outline-variant flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-secondary font-newsreader italic">
                                     JV</div>
                                 <div class="space-y-4">
                                     <div
-                                        class="bg-surface-container p-8 border border-outline-variant italic font-newsreader text-base leading-relaxed opacity-80">
+                                        class="bg-surface-container p-6 md:p-8 border border-outline-variant italic font-newsreader text-base leading-relaxed opacity-80">
                                         "Is it possible to shift the session start time by 30 minutes? I have a medical
                                         prior that might run slightly over, and I want to ensure we have the full
                                         dedicated block for the stencil placement."
@@ -823,29 +836,29 @@
                             </div>
 
                             <!-- Outgoing Placeholder -->
-                            <div class="flex gap-8 max-w-4xl ml-auto flex-row-reverse">
+                            <div class="flex flex-col md:flex-row-reverse gap-4 md:gap-8 max-w-4xl ml-auto">
                                 <div
-                                    class="w-10 h-10 bg-secondary flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-white font-newsreader italic">
+                                    class="w-10 h-10 bg-secondary flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-white font-newsreader italic self-end md:self-start">
                                     A</div>
                                 <div class="space-y-4 flex flex-col items-end">
                                     <div
-                                        class="bg-secondary text-white p-8 italic font-newsreader text-base leading-relaxed">
+                                        class="bg-secondary text-white p-6 md:p-8 italic font-newsreader text-base leading-relaxed">
                                         "Certainly, Julianne. We have adjusted your block to 10:30 AM. Looking forward
                                         to our session."
                                     </div>
-                                    <span class="text-[8px] font-bold uppercase tracking-widest text-secondary">Message
+                                    <span class="text-[8px] font-bold uppercase tracking-widest text-secondary text-right">Message
                                         Sent</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Message Input -->
-                        <div class="p-8 bg-surface-dim border-t border-outline-variant">
-                            <div class="flex items-center space-x-6">
+                        <div class="p-6 md:p-8 bg-surface-dim border-t border-outline-variant">
+                            <div class="flex items-center space-x-4 md:space-x-6">
                                 <input type="text" placeholder="Type protocol response..."
-                                    class="flex-1 bg-surface border border-outline-variant px-8 py-5 text-[10px] font-bold uppercase tracking-widest focus:outline-none focus:border-secondary transition-all">
+                                    class="flex-1 bg-surface border border-outline-variant px-6 md:px-8 py-4 md:py-5 text-[10px] font-bold uppercase tracking-widest focus:outline-none focus:border-secondary transition-all">
                                 <button
-                                    class="bg-secondary text-white p-5 hover:brightness-110 transition-all shadow-lg shadow-secondary/20">
+                                    class="bg-secondary text-white p-4 md:p-5 hover:brightness-110 transition-all shadow-lg shadow-secondary/20 flex-shrink-0">
                                     <i data-lucide="send" class="w-5 h-5"></i>
                                 </button>
                             </div>
@@ -855,24 +868,26 @@
             </section>
 
             <!-- SECTION: STUDIO SETTINGS -->
-            <section id="settings-section" class="hidden p-8 md:p-12 space-y-16 max-w-7xl mx-auto w-full">
+            <section id="settings-section" class="hidden p-6 md:p-12 space-y-12 md:space-y-16 max-w-7xl mx-auto w-full">
                 <div
-                    class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-outline-variant pb-12">
-                    <h1 class="font-newsreader text-7xl font-bold tracking-tighter">Studio. <span
-                            class="italic text-secondary opacity-40 not-italic text-on-surface">Manifesto.</span></h1>
-                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface opacity-40">Operational
-                        Protocols & System Metadata Configurations</p>
+                    class="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-12 border-b border-outline-variant pb-8 md:pb-12">
+                    <div class="space-y-4">
+                        <h1 class="font-newsreader text-5xl md:text-7xl font-bold tracking-tighter">Studio. <span
+                                class="italic text-secondary opacity-40 not-italic text-on-surface">Manifesto.</span></h1>
+                        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface opacity-40">Operational
+                            Protocols & System Metadata Configurations</p>
+                    </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
                     <div
-                        class="p-10 bg-surface-container border border-outline-variant space-y-8 group hover:border-secondary transition-all">
+                        class="p-8 md:p-10 bg-surface-container border border-outline-variant space-y-8 group hover:border-secondary transition-all">
                         <div class="flex items-center space-x-4 opacity-40">
                             <i data-lucide="shield" class="w-4 h-4 text-secondary"></i>
                             <h2 class="text-[10px] font-bold uppercase tracking-[0.2em]">Deposit Protocol</h2>
                         </div>
                         <div class="space-y-4">
-                            <p class="font-newsreader text-5xl font-bold italic tracking-tight text-on-surface">£150.00
+                            <p class="font-newsreader text-4xl md:text-5xl font-bold italic tracking-tight text-on-surface">£150.00
                             </p>
                             <p
                                 class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40 leading-relaxed italic">
@@ -884,13 +899,13 @@
                     </div>
 
                     <div
-                        class="p-10 bg-surface-container border border-outline-variant space-y-8 group hover:border-secondary transition-all">
+                        class="p-8 md:p-10 bg-surface-container border border-outline-variant space-y-8 group hover:border-secondary transition-all">
                         <div class="flex items-center space-x-4 opacity-40">
                             <i data-lucide="clock" class="w-4 h-4 text-secondary"></i>
                             <h2 class="text-[10px] font-bold uppercase tracking-[0.2em]">Session Duration Default</h2>
                         </div>
                         <div class="space-y-4">
-                            <p class="font-newsreader text-5xl font-bold italic tracking-tight text-on-surface">04 <span
+                            <p class="font-newsreader text-4xl md:text-5xl font-bold italic tracking-tight text-on-surface">04 <span
                                     class="text-2xl not-italic opacity-20">Hours</span></p>
                             <p
                                 class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40 leading-relaxed italic">
@@ -902,13 +917,13 @@
                     </div>
 
                     <div
-                        class="p-10 bg-surface-container border border-outline-variant space-y-8 group hover:border-secondary transition-all">
+                        class="p-8 md:p-10 bg-surface-container border border-outline-variant space-y-8 group hover:border-secondary transition-all">
                         <div class="flex items-center space-x-4 opacity-40">
                             <i data-lucide="calendar-days" class="w-4 h-4 text-secondary"></i>
                             <h2 class="text-[10px] font-bold uppercase tracking-[0.2em]">Studio Availability</h2>
                         </div>
                         <div class="space-y-4">
-                            <p class="font-newsreader text-5xl font-bold italic tracking-tight text-on-surface">04 <span
+                            <p class="font-newsreader text-4xl md:text-5xl font-bold italic tracking-tight text-on-surface">04 <span
                                     class="text-2xl not-italic opacity-20">Days / Week</span></p>
                             <p
                                 class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40 leading-relaxed italic">
@@ -980,31 +995,31 @@
 
             for (let i = 1; i <= 35; i++) {
                 const day = document.createElement('div');
-                day.className = `border-r border-b border-outline-variant p-4 hover:bg-surface-dim transition-colors relative min-h-[120px]`;
+                day.className = `border-r border-b border-outline-variant p-1 md:p-4 hover:bg-surface-dim transition-colors relative min-h-[60px] md:min-h-[120px]`;
                 const date = i - 2;
                 if (date > 0 && date <= 31) {
-                    day.innerHTML = `<span class="text-[10px] font-bold uppercase opacity-20">${date}</span>`;
+                    day.innerHTML = `<span class="text-[7px] md:text-[10px] font-bold uppercase opacity-20">${date}</span>`;
 
                     // Add some mock events
                     if (date === 12) {
                         day.innerHTML += `
-                            <div class="mt-4 p-2 bg-secondary/10 border-l-2 border-secondary group cursor-pointer">
-                                <span class="text-[8px] font-bold uppercase block text-secondary">Botanical II</span>
-                                <span class="text-[7px] font-bold uppercase block opacity-20">Marcus R.</span>
+                            <div class="mt-1 md:mt-4 p-1 md:p-2 bg-secondary/10 border-l-[1px] md:border-l-2 border-secondary group cursor-pointer overflow-hidden">
+                                <span class="text-[5px] md:text-[8px] font-bold uppercase block text-secondary truncate">Botanical</span>
+                                <span class="text-[5px] md:text-[7px] font-bold uppercase block opacity-20 truncate">JP</span>
                             </div>`;
                     }
                     if (date === 18) {
                         day.innerHTML += `
-                            <div class="mt-4 p-2 bg-surface-dim border-l-2 border-outline-variant group cursor-pointer">
-                                <span class="text-[8px] font-bold uppercase block opacity-60">Stencil Prep</span>
-                                <span class="text-[7px] font-bold uppercase block opacity-20">Elena R.</span>
+                            <div class="mt-1 md:mt-4 p-1 md:p-2 bg-surface-dim border-l-[1px] md:border-l-2 border-outline-variant group cursor-pointer overflow-hidden">
+                                <span class="text-[5px] md:text-[8px] font-bold uppercase block opacity-60 truncate">Stencil</span>
+                                <span class="text-[5px] md:text-[7px] font-bold uppercase block opacity-20 truncate">ER</span>
                             </div>`;
                     }
                     if (date === 24) {
                         day.innerHTML += `
-                            <div class="mt-4 p-2 bg-secondary/10 border-l-2 border-secondary group cursor-pointer">
-                                <span class="text-[8px] font-bold uppercase block text-secondary">Backpiece IV</span>
-                                <span class="text-[7px] font-bold uppercase block opacity-20">Julian P.</span>
+                            <div class="mt-1 md:mt-4 p-1 md:p-2 bg-secondary/10 border-l-[1px] md:border-l-2 border-secondary group cursor-pointer overflow-hidden">
+                                <span class="text-[5px] md:text-[8px] font-bold uppercase block text-secondary truncate">Backpiece</span>
+                                <span class="text-[5px] md:text-[7px] font-bold uppercase block opacity-20 truncate">MT</span>
                             </div>`;
                     }
                 } else {
