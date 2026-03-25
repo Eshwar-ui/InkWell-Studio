@@ -123,8 +123,8 @@
                 </a>
             </div>
 
-            <!-- Direction Toggle (Sidebar End) -->
-            <div class="px-6 py-4 border-t border-outline-variant/30 mt-auto">
+            <!-- Direction Toggle (Sidebar End - Mobile Only) -->
+            <div class="px-6 py-4 border-t border-outline-variant/30 mt-auto lg:hidden">
                 <div class="flex items-center justify-between">
                     <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface/50">Direction</span>
                     <div id="mobile-dir-toggle"
@@ -171,8 +171,18 @@
             </div>
 
             <div class="flex items-center space-x-6">
-                <!-- Theme Toggle (Header) -->
+                <!-- Direction & Theme Toggle (Header) -->
                 <div class="flex items-center space-x-3 md:pr-6 md:border-r border-outline-variant">
+                    <!-- Global RTL Toggle -->
+                    <div id="dir-toggle"
+                        class="hidden lg:flex relative bg-surface-container rounded-full p-1 cursor-pointer w-[72px] h-7 items-center group transition-all duration-300 me-2"
+                        data-dir="ltr">
+                        <span class="ltr-label text-[8px] font-bold transition-colors">LTR</span>
+                        <span class="rtl-label text-[8px] font-bold transition-colors">RTL</span>
+                        <div
+                            class="dir-knob h-5 w-8 bg-secondary rounded-full transition-all duration-300 shadow-lg shadow-secondary/20">
+                        </div>
+                    </div>
                     <button id="mode-toggle" class="p-2 hover:bg-surface-container transition-colors group"
                         aria-label="Toggle Theme">
                         <i data-lucide="sun" class="w-5 h-5 opacity-40 group-hover:opacity-100 dark:block hidden"></i>
@@ -217,7 +227,7 @@
                 <!-- Stats Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     <div
-                        class="bg-surface-container p-12 space-y-8 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative">
+                        class="bg-surface-container p-10 md:p-12 space-y-8 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative">
                         <div
                             class="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-[0.08] transition-opacity">
                             <i data-lucide="layers" class="w-24 h-24"></i>
@@ -230,7 +240,7 @@
                         </div>
                     </div>
                     <div
-                        class="bg-surface-container p-12 space-y-8 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative">
+                        class="bg-surface-container p-10 md:p-12 space-y-8 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative">
                         <div
                             class="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-[0.08] transition-opacity">
                             <i data-lucide="credit-card" class="w-24 h-24"></i>
@@ -244,7 +254,7 @@
                         </div>
                     </div>
                     <div
-                        class="bg-surface-container p-12 space-y-8 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative">
+                        class="bg-surface-container p-10 md:p-12 space-y-8 border border-outline-variant hover:border-secondary transition-all group overflow-hidden relative">
                         <div
                             class="absolute top-0 right-0 p-6 opacity-[0.02] group-hover:opacity-[0.08] transition-opacity">
                             <i data-lucide="calendar" class="w-24 h-24"></i>
@@ -253,6 +263,101 @@
                         <div class="flex items-baseline space-x-4">
                             <span class="font-newsreader text-4xl font-bold italic tracking-tight uppercase">12 Oct
                                 <span class="not-italic opacity-40 font-newsreader">2024</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Narrative Blueprint & Activity Feed -->
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <!-- Narrative Blueprint (Inbound Focus) -->
+                    <div class="lg:col-span-7 space-y-12">
+                        <div class="flex items-end justify-between border-b border-outline-variant pb-8">
+                            <h3 class="font-newsreader text-3xl font-bold italic tracking-tight uppercase">Narrative
+                                Blueprint</h3>
+                            <button onclick="showSection('requests')"
+                                class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity border-b-2 border-secondary pb-1">Queue
+                                Details</button>
+                        </div>
+                        <div
+                            class="bg-surface-container border border-outline-variant p-8 md:p-12 space-y-12 relative overflow-hidden group">
+                            <div
+                                class="absolute top-0 right-0 p-12 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">
+                                <i data-lucide="pen-tool" class="w-48 h-48"></i>
+                            </div>
+                            <div class="flex flex-col md:flex-row gap-12 items-start relative z-10">
+                                <div class="aspect-[3/4] w-full md:w-56 bg-surface-dim border border-outline-variant/30 overflow-hidden relative">
+                                    <img src="../assets/images/work-2.png" alt="Current Stencil Work" class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-1000">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-surface-container/80 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4">
+                                        <span class="text-[8px] font-bold uppercase tracking-[0.2em] bg-secondary text-white px-3 py-1.5 shadow-xl">Stencil v0.2</span>
+                                    </div>
+                                </div>
+                                <div class="flex-1 space-y-8">
+                                    <div class="space-y-2">
+                                        <span class="text-[9px] font-black uppercase tracking-[0.3em] text-secondary">Active Project</span>
+                                        <h4 class="font-newsreader text-4xl font-bold italic tracking-tight">Botanical Sleeve II</h4>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-8">
+                                        <div class="space-y-1">
+                                            <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Style Focus</p>
+                                            <p class="text-[10px] font-bold uppercase tracking-widest">Fine Line Editorial</p>
+                                        </div>
+                                        <div class="space-y-1">
+                                            <p class="text-[8px] font-bold uppercase tracking-widest opacity-40">Placement</p>
+                                            <p class="text-[10px] font-bold uppercase tracking-widest">Outer Forearm</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-6 border-t border-outline-variant/30">
+                                        <p class="text-xs italic font-newsreader leading-relaxed opacity-60">
+                                            "Integrating heavy anatomical shading into the floral gradients. Ensuring the curvature follows the muscle line perfectly."
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Studio Activity -->
+                    <div class="lg:col-span-5 space-y-12">
+                        <div class="flex items-end justify-between border-b border-outline-variant pb-8">
+                            <h3 class="font-newsreader text-3xl font-bold italic tracking-tight uppercase">Activity</h3>
+                            <button
+                                class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity">Ledger</button>
+                        </div>
+                        <div class="space-y-1">
+                            <!-- Activity Item 1 -->
+                            <div class="p-8 bg-surface-container border border-outline-variant flex gap-6 items-start group hover:border-secondary/40 transition-all">
+                                <div class="w-10 h-10 bg-secondary flex items-center justify-center shrink-0">
+                                    <i data-lucide="file-text" class="w-4 h-4 text-white"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <p class="text-[10px] font-bold uppercase tracking-widest leading-none">Stencil Update</p>
+                                    <p class="text-[9px] uppercase tracking-widest opacity-40">Phase 2 Stencil has been uploaded for your review.</p>
+                                    <p class="text-[7px] font-bold uppercase tracking-[0.2em] text-secondary pt-2">2 Hours Ago</p>
+                                </div>
+                            </div>
+                            <!-- Activity Item 2 -->
+                            <div class="p-8 bg-surface-container border border-outline-variant flex gap-6 items-start group hover:border-secondary/40 transition-all opacity-60">
+                                <div class="w-10 h-10 bg-surface-dim border border-outline-variant flex items-center justify-center shrink-0">
+                                    <i data-lucide="message-square" class="w-4 h-4 opacity-40"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <p class="text-[10px] font-bold uppercase tracking-widest leading-none">Studio Dispatch</p>
+                                    <p class="text-[9px] uppercase tracking-widest opacity-40">The studio has replied to your inquiry regarding placement.</p>
+                                    <p class="text-[7px] font-bold uppercase tracking-[0.2em] pt-2">Yesterday</p>
+                                </div>
+                            </div>
+                            <!-- Activity Item 3 -->
+                            <div class="p-8 bg-surface-container border border-outline-variant flex gap-6 items-start group hover:border-secondary/40 transition-all opacity-40">
+                                <div class="w-10 h-10 bg-surface-dim border border-outline-variant flex items-center justify-center shrink-0">
+                                    <i data-lucide="banknote" class="w-4 h-4 opacity-40"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <p class="text-[10px] font-bold uppercase tracking-widest leading-none">Payment Verified</p>
+                                    <p class="text-[9px] uppercase tracking-widest opacity-40">Initial session deposit of £150.00 confirmed.</p>
+                                    <p class="text-[7px] font-bold uppercase tracking-[0.2em] pt-2">04 Oct 2024</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
